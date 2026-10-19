@@ -1,0 +1,122 @@
+/* =========================================================
+   THÈME « MINÉRAL » — sobre et architectural :
+   tons pierre et anthracite, touche de sable, angles nets,
+   grands titres serrés, beaucoup d'air. Esprit showroom.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-head: 'Manrope', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --head-weight: 800;
+  --head-spacing: -0.035em;
+  --head-line: 1.05;
+  --kicker-spacing: 0.24em;
+
+  --c-bg: #f6f4f0;
+  --c-surface: #ffffff;
+  --c-alt: #ece8e1;
+  --c-text: #3d4145;
+  --c-muted: #6b6f73;
+  --c-head: #1c1f22;
+  --c-border: #dfd9cf;
+  --c-accent: #1c1f22;
+  --c-accent-hover: #3a3f44;
+  --c-accent-ink: #ffffff;
+  --c-kicker: #9c7b4d;
+  --sand: #b08d57;
+
+  --c-topbar-bg: #1c1f22;
+  --c-topbar-text: #d9d4cb;
+  --c-header-bg: rgba(246, 244, 240, .94);
+  --c-header-text: #1c1f22;
+  --c-footer-bg: #1c1f22;
+  --c-footer-text: #a39e95;
+
+  --radius: 4px;
+  --radius-img: 2px;
+  --radius-btn: 2px;
+  --shadow: 0 1px 2px rgba(28, 31, 34, .05);
+  --shadow-hover: 0 24px 50px rgba(28, 31, 34, .14);
+}
+
+.btn { font-weight: 700; letter-spacing: 0.02em; }
+.btn--secondary { border-width: 1.5px; }
+.topbar .icon { color: var(--sand); }
+.site-header { backdrop-filter: blur(12px); border-bottom: 1px solid var(--c-border); }
+.brand__mark { border-radius: 2px; }
+.brand__auto { color: var(--sand); }
+.site-nav__list a { font-weight: 600; }
+
+/* Hero : image encadrée d'un filet sable décalé */
+.hero { background: linear-gradient(180deg, #f6f4f0 0%, #efebe4 100%); }
+.hero__title { font-size: clamp(2.6rem, 6vw, 4.8rem); }
+.hero__title-brand { color: var(--sand); font-size: 0.3em; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700; }
+.hero__kicker .icon, .hero__facts .icon { color: var(--sand); }
+.hero__media { isolation: isolate; margin: 0 22px 22px 0; }
+.hero__media::before { content: ''; position: absolute; inset: 22px -22px -22px 22px; z-index: -1; border: 1.5px solid var(--sand); }
+.hero__badge { left: auto; right: -12px; bottom: 32px; border-radius: 2px; letter-spacing: 0.04em; }
+.hero__badge .icon { color: var(--sand); }
+
+/* Titres de section avec un filet */
+.section__kicker { display: flex; align-items: center; gap: 14px; }
+.section__kicker::before { content: ''; width: 36px; height: 1.5px; background: currentColor; }
+.section__title { font-size: clamp(2rem, 4vw, 3.2rem); }
+.contact__cta .section__kicker { justify-content: center; }
+
+/* Prestations */
+.featured__card { border: 0; box-shadow: var(--shadow); }
+.featured__icon { background: var(--c-surface); color: var(--c-head); border: 1.5px solid var(--c-head); box-shadow: none; }
+.featured__card:hover .featured__icon { background: var(--c-head); color: #fff; }
+.featured__band { background: var(--c-head); border: 0; }
+.featured__labels li { color: #fff; }
+.featured__labels .icon { color: var(--sand); }
+.featured__call { background: var(--sand); color: #1c1f22; }
+.featured__call:hover { background: #c4a26c; }
+
+/* Savoir-faire : liste numérotée sur filets */
+.services__grid { gap: 0; border-top: 1px solid var(--c-border); }
+.service { border: 0; border-bottom: 1px solid var(--c-border); border-radius: 0; background: transparent; padding: 34px 26px 34px 0; }
+.service:hover { transform: none; box-shadow: none; }
+.service::before { content: counter(svc, decimal-leading-zero); display: block; font: 700 0.85rem/1 var(--font-head); letter-spacing: 0.2em; color: var(--sand); margin-bottom: 18px; }
+.service__icon { background: transparent; color: var(--c-head); width: auto; height: auto; font-size: 2rem; margin-bottom: 14px; justify-content: start; }
+.service--featured { background: var(--c-head); padding-left: 26px; }
+.service--featured::before { color: var(--sand); }
+.service--featured .service__icon, .service--featured .service__title, .service--featured strong { color: #fff; }
+.service--featured p { color: #c9c4bb; }
+
+/* À propos */
+.highlight { border: 0; box-shadow: var(--shadow); }
+.highlight__icon { border-radius: 2px; background: var(--c-alt); color: var(--c-head); }
+
+/* Galerie */
+.gallery__item figcaption { font-weight: 600; letter-spacing: 0.03em; }
+
+/* Zones */
+.zones { background: var(--c-bg); }
+.zones__all { color: var(--sand); }
+.zones__dept { border: 0; box-shadow: var(--shadow); }
+.zones__num { color: var(--c-border); font-weight: 800; }
+.zones__dept--home { background: var(--c-head); }
+.zones__dept--home .zones__num { color: var(--sand); }
+.zones__dept--home .zones__name { color: #fff; }
+.zones__dept--home .zones__tag { color: var(--sand); }
+.zones__dept--home .zones__cities { color: #c9c4bb; }
+.zones__extra li { border: 0; box-shadow: var(--shadow); }
+.zones__extra-icon { background: var(--c-alt); color: var(--c-head); }
+
+/* Contact : bloc anthracite */
+.contact {
+  --c-head: #ffffff; --c-muted: #b9b4ab; --c-surface: rgba(255, 255, 255, .05); --c-border: rgba(255, 255, 255, .12);
+  background: #1c1f22; color: #d9d4cb;
+}
+.contact .section__kicker { color: var(--sand); }
+.contact__phone-label { color: var(--sand); }
+.contact__icon { background: rgba(176, 141, 87, .16); color: var(--sand); }
+.contact-form { border-top: 3px solid var(--sand); }
+.contact-form .btn--primary { background: #1c1f22; }
+.contact-form__status.is-error { background: #fdecea; color: #8a1c12; }
+.contact-form__status.is-success { background: #e8f5ec; color: #14532d; }
+
+.callbar__main { background: #1c1f22; }
+.callbar__alt { background: var(--sand); color: #1c1f22; }

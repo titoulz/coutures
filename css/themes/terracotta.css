@@ -1,0 +1,123 @@
+/* =========================================================
+   THÈME « TERRACOTTA » — chaleureux et artisanal :
+   fond crème, terre cuite, vert olive, titres à empattements,
+   formes arrondies. Esprit maison de famille et savoir-faire.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-head: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --head-weight: 600;
+  --head-spacing: -0.015em;
+  --head-line: 1.1;
+  --kicker-transform: none;
+  --kicker-spacing: 0.02em;
+
+  --c-bg: #fbf6ef;
+  --c-surface: #ffffff;
+  --c-alt: #f4eadd;
+  --c-text: #4a3f37;
+  --c-muted: #7a6b5f;
+  --c-head: #2e211a;
+  --c-border: #eadccb;
+  --c-accent: #b9532c;
+  --c-accent-hover: #9c4321;
+  --c-accent-ink: #ffffff;
+  --c-kicker: #6f7a45;
+  --olive: #6f7a45;
+
+  --c-topbar-bg: #2e211a;
+  --c-topbar-text: #f1e2d0;
+  --c-header-bg: #fbf6ef;
+  --c-header-text: #2e211a;
+  --c-footer-bg: #2e211a;
+  --c-footer-text: #c9b6a3;
+
+  --radius: 18px;
+  --radius-img: 24px;
+  --radius-btn: 999px;
+  --shadow: 0 10px 30px rgba(110, 60, 30, .08);
+  --shadow-hover: 0 22px 50px rgba(110, 60, 30, .16);
+}
+
+.btn { font-weight: 700; }
+.btn--primary { box-shadow: 0 10px 22px rgba(185, 83, 44, .28); }
+.btn--secondary { border-width: 1.5px; border-color: var(--c-border); background: #fff; }
+.btn--secondary:hover { background: var(--c-alt); color: var(--c-accent); border-color: var(--c-accent); }
+.site-header { border-bottom: 1px solid var(--c-border); }
+.brand__mark { border-radius: 50%; }
+.brand__name { font-family: var(--font-head); text-transform: none; font-weight: 700; font-size: 1.45rem; letter-spacing: -0.01em; }
+.site-nav__list a:hover { background: var(--c-alt); }
+
+/* Hero : arche douce et tache de couleur */
+.hero {
+  background:
+    radial-gradient(circle at 92% 8%, #f6dcc6 0, transparent 38%),
+    radial-gradient(circle at 0% 100%, #eef0e0 0, transparent 40%),
+    var(--c-bg);
+}
+.hero__kicker { background: #fff; border: 1px solid var(--c-border); border-radius: 999px; padding: 6px 16px 6px 10px; box-shadow: var(--shadow); font-size: 0.9rem; }
+.hero__kicker .icon { color: var(--c-accent); }
+.hero__title { font-size: clamp(2.5rem, 5.4vw, 4.4rem); }
+.hero__title-main em, .hero__title-brand { font-style: italic; }
+.hero__title-brand { color: var(--c-accent); font-size: 0.4em; letter-spacing: 0; font-weight: 500; }
+.hero__facts .icon { color: var(--olive); }
+.hero__media img { border-radius: 220px 220px var(--radius-img) var(--radius-img); aspect-ratio: 4 / 4.4; }
+.hero__badge { border-radius: 999px; background: var(--olive); left: 50%; transform: translateX(-50%); white-space: nowrap; }
+
+.section__kicker { font-family: var(--font-head); font-style: italic; font-size: 1.1rem; font-weight: 500; }
+.section__title { font-size: clamp(2rem, 3.8vw, 3rem); }
+
+/* Prestations */
+.featured { background: var(--c-bg); }
+.featured__card { border: 0; box-shadow: var(--shadow); }
+.featured__icon { border-radius: 50%; }
+.featured__card:nth-child(even) .featured__icon { background: var(--olive); }
+.featured__band { background: var(--c-alt); border: 0; }
+.featured__labels .icon { color: var(--olive); }
+.featured__call { border-radius: 999px; padding: 14px 32px; text-align: center; }
+
+/* Savoir-faire */
+.services { background: var(--c-alt); }
+.service { border: 0; box-shadow: var(--shadow); }
+.service__icon { border-radius: 50%; background: #f6e3d6; color: var(--c-accent); }
+.service:nth-child(even) .service__icon { background: #e9ecd9; color: var(--olive); }
+.service--featured { background: var(--c-accent); }
+.service--featured .service__title, .service--featured p, .service--featured strong { color: #fff; }
+.service--featured .service__icon { background: rgba(255, 255, 255, .18); color: #fff; }
+
+/* À propos */
+.highlight { border: 0; box-shadow: var(--shadow); }
+.highlight__icon { border-radius: 50%; }
+.about__media figcaption { font-family: var(--font-head); font-style: italic; font-size: 1.1rem; }
+
+/* Galerie */
+.gallery__item figcaption { font-family: var(--font-head); font-style: italic; font-size: 1.05rem; }
+
+/* Zones */
+.zones__all { font-style: italic; }
+.zones__dept { border: 0; box-shadow: var(--shadow); }
+.zones__num { font-weight: 700; }
+.zones__dept--home { background: var(--olive); }
+.zones__dept--home .zones__num, .zones__dept--home .zones__name { color: #fff; }
+.zones__dept--home .zones__tag, .zones__dept--home .zones__cities { color: #e7ead6; }
+.zones__extra li { border: 0; box-shadow: var(--shadow); }
+.zones__extra-icon { border-radius: 50%; }
+
+/* Contact : grand bloc terre cuite arrondi */
+.contact { padding-inline: 12px; background: var(--c-bg); }
+.contact > .container {
+  --c-head: #ffffff; --c-muted: #f6dccd; --c-surface: rgba(255, 255, 255, .12); --c-border: rgba(255, 255, 255, .25);
+  background: var(--c-accent); color: #fff; border-radius: 32px; padding-block: clamp(36px, 6vw, 64px);
+}
+.contact .section__kicker { color: #ffe3cf; }
+.contact__phone-label { color: #ffe3cf; }
+.contact__icon { background: rgba(255, 255, 255, .18); color: #fff; }
+.contact-form { box-shadow: 0 30px 60px rgba(60, 20, 0, .25); }
+.contact-form__title { font-size: 1.8rem; }
+.contact-form__status.is-error { background: #fdecea; color: #8a1c12; }
+.contact-form__status.is-success { background: #eef3e2; color: #3c4a16; }
+
+.site-footer .brand__auto { color: #e9a07f; }
+.callbar__alt { background: var(--olive); color: #fff; }

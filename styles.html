@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propositions de style | Nom de l'entreprise</title>
+<!-- Page de présentation interne : à ne pas indexer, à supprimer en production -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #111214; --card: #1a1b1e; --line: #2a2c30; --text: #f1efe9; --muted: #a3a09a; --accent: #c8a96a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 48px 20px 80px; }
+  header { display: flex; flex-wrap: wrap; gap: 24px; align-items: end; justify-content: space-between; margin-bottom: 36px; }
+  .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: 12px; margin: 0 0 10px; }
+  h1 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 44px); letter-spacing: -.02em; line-height: 1.1; }
+  h1 span { color: var(--accent); }
+  .lead { margin: 0; color: var(--muted); max-width: 640px; line-height: 1.6; }
+  .seg { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px; }
+  .seg button { font: 600 14px/1 inherit; font-family: inherit; color: var(--muted); background: none; border: 0; padding: 10px 18px; border-radius: 999px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+  .grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s, border-color .25s; }
+  .card:hover { transform: translateY(-4px); border-color: #3e4147; }
+  .preview { position: relative; display: block; overflow: hidden; background: #000; aspect-ratio: 16 / 11; }
+  .mobile .preview { aspect-ratio: auto; height: 560px; background: repeating-linear-gradient(45deg, #16171a 0 10px, #131417 10px 20px); }
+  .preview iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: 0 0; pointer-events: none; background: #fff; }
+  .mobile .preview iframe { border-radius: 26px; box-shadow: 0 0 0 8px #222, 0 20px 40px rgba(0, 0, 0, .5); top: 18px; }
+  .preview::after { content: 'Ouvrir ce style →'; position: absolute; inset: 0; display: grid; place-items: center; background: rgba(17, 18, 20, .55); color: #fff; font-weight: 700; opacity: 0; transition: opacity .2s; }
+  .preview:hover::after, .preview:focus-visible::after { opacity: 1; }
+  .meta { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .meta-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .meta h2 { margin: 0; font-size: 20px; }
+  .num { color: var(--muted); font-weight: 600; font-size: 13px; }
+  .meta p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.55; flex: 1; }
+  .sw { display: flex; gap: 6px; }
+  .sw i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); }
+  .open { display: inline-flex; justify-content: center; gap: 8px; padding: 12px; border-radius: 12px; background: #26282c; color: var(--text); font-weight: 600; text-decoration: none; }
+  .open:hover { background: var(--accent); color: #111; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; line-height: 1.6; border-top: 1px solid var(--line); padding-top: 24px; }
+  kbd { border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <p class="eyebrow">Nom de l'entreprise · Votre-Ville</p>
+      <h1>5 propositions de style <span>pour votre futur site</span></h1>
+      <p class="lead">Même contenu, mêmes informations, cinq ambiances différentes. Cliquez sur un aperçu pour parcourir le site complet dans ce style.</p>
+    </div>
+    <div class="seg" role="group" aria-label="Type d'écran">
+      <button type="button" data-view="desktop" aria-pressed="true">Ordinateur</button>
+      <button type="button" data-view="mobile" aria-pressed="false">Mobile</button>
+    </div>
+  </header>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    Sur le site, le bouton flottant en bas à gauche permet de passer d'un style à l'autre (ou touches <kbd>1</kbd> à <kbd>5</kbd>).
+    Chaque style a son propre lien à partager, par exemple <code>index.html?style=prestige</code>.
+  </footer>
+</div>
+
+<script>
+  var THEMES = [
+    { id: 'mineral', name: 'Minéral', desc: "Sobre et architectural, esprit showroom : tons pierre et anthracite, touche de sable, beaucoup d'air. Met en valeur les photos.", colors: ['#f6f4f0', '#1c1f22', '#b08d57'] },
+    { id: 'terracotta', name: 'Terracotta', desc: "Chaleureux et artisanal : fond crème, terre cuite et vert olive, titres à empattements, formes arrondies. Rassurant pour les particuliers.", colors: ['#fbf6ef', '#b9532c', '#6f7a45'] },
+    { id: 'atelier', name: 'Atelier', desc: "Industriel et brut : fond sombre, orange chantier, gros titres condensés, services numérotés façon panneau d'atelier.", colors: ['#121212', '#f26a1b', '#f2f4f7'] },
+    { id: 'prestige', name: 'Prestige', desc: "Haut de gamme : noir, ivoire et or, grande typographie élégante, mise en page éditoriale. Pour une clientèle exigeante.", colors: ['#0e0e0e', '#c8a96a', '#f4efe6'] },
+    { id: 'azur', name: 'Azur', desc: "Frais et lumineux : blanc, bleu et turquoise, motif quadrillé discret, formes très arrondies. Moderne et rassurant.", colors: ['#ffffff', '#0d63b8', '#17b3c4'] }
+  ];
+  var grid = document.getElementById('grid');
+  var view = 'desktop';
+  var SIZES = { desktop: { w: 1366, h: 939 }, mobile: { w: 390, h: 760 } };
+
+  grid.innerHTML = THEMES.map(function (t, i) {
+    var url = 'index.html?style=' + t.id;
+    return '<article class="card">' +
+      '<a class="preview" href="' + url + '" aria-label="Ouvrir le style ' + t.name + '">' +
+        '<iframe src="index.html?style=' + t.id + '&embed=1" loading="lazy" tabindex="-1" title="Aperçu du style ' + t.name + '"></iframe>' +
+      '</a>' +
+      '<div class="meta">' +
+        '<div class="meta-top"><h2>' + t.name + '</h2><span class="num">Style ' + (i + 1) + '/' + THEMES.length + '</span></div>' +
+        '<p>' + t.desc + '</p>' +
+        '<div class="sw">' + t.colors.map(function (c) { return '<i style="background:' + c + '"></i>'; }).join('') + '</div>' +
+        '<a class="open" href="' + url + '">Voir le site complet →</a>' +
+      '</div></article>';
+  }).join('');
+
+  function fit() {
+    var size = SIZES[view];
+    grid.querySelectorAll('.preview').forEach(function (box) {
+      var frame = box.querySelector('iframe');
+      var scale = view === 'desktop' ? box.clientWidth / size.w : Math.min(1, (box.clientHeight - 36) / size.h, (box.clientWidth - 40) / size.w);
+      frame.style.width = size.w + 'px';
+      frame.style.height = size.h + 'px';
+      frame.style.transform = view === 'desktop' ? 'scale(' + scale + ')' : 'translateX(-50%) scale(' + scale + ')';
+      frame.style.transformOrigin = view === 'desktop' ? '0 0' : 'center top';
+      frame.style.left = view === 'mobile' ? '50%' : '0';
+    });
+  }
+  document.querySelectorAll('[data-view]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      view = btn.getAttribute('data-view');
+      document.body.classList.toggle('mobile', view === 'mobile');
+      document.querySelectorAll('[data-view]').forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+      fit();
+    });
+  });
+  window.addEventListener('resize', fit);
+  fit();
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# À PERSONNALISER : nom de domaine définitif
+Sitemap: https://www.exemple.fr/sitemap.xml

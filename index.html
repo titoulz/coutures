@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="mineral">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- À PERSONNALISER : titre (≈ 60 caractères) et description (≈ 155 caractères) pour Google -->
+<title>Votre métier à Votre-Ville | Nom de l'entreprise</title>
+<meta name="description" content="Nom de l'entreprise, Votre-Ville : décrivez en une phrase votre métier, vos prestations principales et votre zone d'intervention.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Nom de l'entreprise">
+<meta name="theme-color" content="#121212">
+<link rel="canonical" href="https://www.exemple.fr/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<!-- Partage sur les réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nom de l'entreprise">
+<meta property="og:title" content="Nom de l'entreprise - Votre métier à Votre-Ville">
+<meta property="og:description" content="Décrivez en une phrase votre métier et vos prestations principales.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://www.exemple.fr/">
+<meta property="og:image" content="https://www.exemple.fr/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="images/hero.svg">
+
+<link rel="stylesheet" href="css/base.css">
+<!-- Thème graphique (polices incluses) : en production, garder UNE seule ligne avec le thème choisi -->
+<link rel="stylesheet" href="css/themes/mineral.css" id="theme-css">
+
+<!-- ===== DÉMO : sélection du style (à supprimer en production) ===== -->
+<script src="js/style-switcher.js"></script>
+
+<!-- Données structurées pour Google (SEO local). À PERSONNALISER : toutes les valeurs. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Nom de l'entreprise",
+  "image": "https://www.exemple.fr/images/og-image.jpg",
+  "logo": "https://www.exemple.fr/images/logo.svg",
+  "description": "Décrivez votre activité en une ou deux phrases.",
+  "url": "https://www.exemple.fr/",
+  "telephone": "+33123456789",
+  "email": "contact@exemple.fr",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1 rue de l'Exemple",
+    "addressLocality": "Votre-Ville",
+    "postalCode": "00000",
+    "addressRegion": "Votre région",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 0,
+    "longitude": 0
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "12:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "14:00",
+      "closes": "18:00"
+    }
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prestation phare 1" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prestation phare 2" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prestation phare 3" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prestation phare 4" } }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Votre-Ville" },
+    { "@type": "City", "name": "Ville 2" },
+    { "@type": "City", "name": "Ville 3" },
+    { "@type": "City", "name": "Ville 4" }
+  ],
+  "sameAs": []
+}
+</script>
+</head>
+<body>
+
+<!-- Pictogrammes SVG (utilisés via <use href="#i-...">) -->
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 17V6H2v11h2"/><path d="M14 9h4l4 4.5V17h-2"/><path d="M8.5 17h7"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></symbol>
+  <symbol id="i-tow" viewBox="0 0 24 24"><path d="M14 17V8h4l4 5v4h-2"/><path d="M14 17H9M4 17H2v-3l11-6"/><path d="M5 11.5v2.5a1.5 1.5 0 1 0 3 0"/><circle cx="6.5" cy="17.5" r="2"/><circle cx="17.5" cy="17.5" r="2"/></symbol>
+  <symbol id="i-crane" viewBox="0 0 24 24"><path d="M3 21h9M7 21V3M7 3h14M7 7l4-4M3 7h4"/><path d="M18 3v8"/><path d="M16 11h4v3h-4z"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 17H3v-5l2.5-5h11l3 5H21v5h-2"/><path d="M3 12h18M9 17h6"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></symbol>
+  <symbol id="i-vintage" viewBox="0 0 24 24"><path d="M3.5 16H2v-3l3-1 3-4h7l3 4 4 1v3h-1.5M8.5 16h7"/><path d="M8 8v4M2 12h20"/><circle cx="6" cy="16.5" r="2.5"/><circle cx="18" cy="16.5" r="2.5"/></symbol>
+  <symbol id="i-hammer" viewBox="0 0 24 24"><path d="m15 12-8.5 8.5a2.12 2.12 0 1 1-3-3L12 9"/><path d="M17.64 15 22 10.64M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"/></symbol>
+  <symbol id="i-paint" viewBox="0 0 24 24"><rect x="3" y="3" width="16" height="6" rx="1"/><path d="M19 6h2v5h-9v4"/><rect x="10" y="15" width="4" height="7" rx="1"/></symbol>
+  <symbol id="i-glass" viewBox="0 0 24 24"><path d="M3 8c3-2.5 15-2.5 18 0l-2 10H5z"/><path d="M8.5 14l3-3M12.5 15l4-4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.65-4.2A9 9 0 1 1 8 20z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 1a5 5 0 0 1-2.9-2.9l1-1-1-2z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ===== BARRE SUPÉRIEURE ===== -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <a href="tel:+33612345678" class="topbar__phone">
+      <svg class="icon"><use href="#i-phone"/></svg> Urgences : 06 12 34 56 78
+    </a>
+    <a href="tel:+33123456789" class="topbar__hours">
+      <svg class="icon"><use href="#i-clock"/></svg> Lun-Ven : 8h-12h / 14h-18h
+    </a>
+    <span class="topbar__network">
+      <svg class="icon"><use href="#i-star"/></svg> Votre label ou réseau
+    </span>
+  </div>
+</div>
+
+<!-- ===== EN-TÊTE / NAVIGATION ===== -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#accueil" aria-label="Nom de l'entreprise - retour à l'accueil">
+      <!-- Logo texte (s'adapte à tous les thèmes). Pour un logo image :
+           <img class="brand__logo" src="images/logo.svg" width="480" height="240" alt="Nom de l'entreprise">
+           attention, l'en-tête est clair ou sombre selon le thème. -->
+      <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-badge"/></svg></span>
+      <span class="brand__text">
+        <span class="brand__name">Nom de <span class="brand__auto">l'entreprise</span></span>
+        <span class="brand__tagline">Votre métier &middot; Votre-Ville</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <svg class="icon nav-toggle__open"><use href="#i-menu"/></svg>
+      <svg class="icon nav-toggle__close"><use href="#i-close"/></svg>
+      <span class="sr-only">Ouvrir le menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+      <ul class="site-nav__list">
+        <li><a href="#prestations">Prestations</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#zones">Zones</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="tel:+33123456789" class="btn btn--primary site-nav__cta">
+        <svg class="icon"><use href="#i-phone"/></svg> 01 23 45 67 89
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="accueil">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="hero__kicker">
+          <svg class="icon"><use href="#i-pin"/></svg> Votre-Ville &middot; Votre région
+        </p>
+        <h1 class="hero__title">
+          <span class="hero__title-main">Votre métier à Votre-Ville</span>
+          <span class="hero__title-brand">Nom de l'entreprise</span>
+        </h1>
+        <p class="hero__lead">
+          Présentez ici votre entreprise en deux ou trois phrases : ce que vous faites,
+          pour qui, et ce qui vous distingue. Citez votre ville et vos prestations
+          principales, c'est ce que Google lira en premier.
+        </p>
+        <div class="hero__actions">
+          <a href="tel:+33123456789" class="btn btn--primary btn--lg">
+            <svg class="icon"><use href="#i-phone"/></svg> Appeler : 01 23 45 67 89
+          </a>
+          <a href="#contact" class="btn btn--secondary btn--lg">
+            <svg class="icon"><use href="#i-file"/></svg> Demander un devis
+          </a>
+        </div>
+        <ul class="hero__facts">
+          <li><svg class="icon"><use href="#i-badge"/></svg> Argument 1</li>
+          <li><svg class="icon"><use href="#i-shield"/></svg> Argument 2</li>
+          <li><svg class="icon"><use href="#i-star"/></svg> Argument 3</li>
+        </ul>
+      </div>
+
+      <figure class="hero__media">
+        <img src="images/hero.svg" width="1280" height="960" alt="Décrivez la photo principale" fetchpriority="high">
+        <figcaption class="hero__badge">
+          <svg class="icon"><use href="#i-badge"/></svg> Votre point fort
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== PRESTATIONS PHARES ===== -->
+  <section class="section featured" id="prestations" aria-labelledby="featured-title">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__kicker">Prestations phares</p>
+        <h2 class="section__title" id="featured-title">Vos prestations principales</h2>
+        <p class="section__intro">
+          Mettez en avant ici les 4 prestations qui vous font travailler le plus,
+          avec une photo pour chacune.
+        </p>
+      </header>
+
+      <ul class="featured__grid">
+        <li class="featured__card">
+          <img class="featured__img" src="images/prestation-1.svg" width="640" height="480" loading="lazy" alt="Décrivez la photo">
+          <span class="featured__icon"><svg class="icon"><use href="#i-gear"/></svg></span>
+          <h3 class="featured__title">Prestation phare 1</h3>
+          <p>Décrivez cette prestation en une ou deux phrases.</p>
+        </li>
+        <li class="featured__card">
+          <img class="featured__img" src="images/prestation-2.svg" width="640" height="480" loading="lazy" alt="Décrivez la photo">
+          <span class="featured__icon"><svg class="icon"><use href="#i-hammer"/></svg></span>
+          <h3 class="featured__title">Prestation phare 2</h3>
+          <p>Décrivez cette prestation en une ou deux phrases.</p>
+        </li>
+        <li class="featured__card">
+          <img class="featured__img" src="images/prestation-3.svg" width="640" height="480" loading="lazy" alt="Décrivez la photo">
+          <span class="featured__icon"><svg class="icon"><use href="#i-truck"/></svg></span>
+          <h3 class="featured__title">Prestation phare 3</h3>
+          <p>Décrivez cette prestation en une ou deux phrases.</p>
+        </li>
+        <li class="featured__card">
+          <img class="featured__img" src="images/prestation-4.svg" width="640" height="480" loading="lazy" alt="Décrivez la photo">
+          <span class="featured__icon"><svg class="icon"><use href="#i-badge"/></svg></span>
+          <h3 class="featured__title">Prestation phare 4</h3>
+          <p>Décrivez cette prestation en une ou deux phrases.</p>
+        </li>
+      </ul>
+
+      <div class="featured__band">
+        <ul class="featured__labels">
+          <li><svg class="icon"><use href="#i-badge"/></svg> Engagement ou agrément 1</li>
+          <li><svg class="icon"><use href="#i-shield"/></svg> Engagement ou agrément 2</li>
+        </ul>
+        <a href="tel:+33612345678" class="featured__call">
+          <span class="featured__call-label">Urgences</span>
+          <span class="featured__call-number">06 12 34 56 78</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__kicker">Nos services</p>
+        <h2 class="section__title" id="services-title">Tous nos services</h2>
+        <p class="section__intro">
+          Listez ici l'ensemble de vos services. Le service mis en couleur est celui
+          que vous voulez faire ressortir (offre spéciale, nouveauté...).
+        </p>
+      </header>
+
+      <ul class="services__grid">
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-gear"/></svg></span>
+          <h3 class="service__title">Service 1</h3>
+          <p>Décrivez ce service en une ou deux phrases.</p>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-hammer"/></svg></span>
+          <h3 class="service__title">Service 2</h3>
+          <p>Décrivez ce service en une ou deux phrases.</p>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-paint"/></svg></span>
+          <h3 class="service__title">Service 3</h3>
+          <p>Décrivez ce service en une ou deux phrases.</p>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-truck"/></svg></span>
+          <h3 class="service__title">Service 4</h3>
+          <p>Décrivez ce service en une ou deux phrases.</p>
+        </li>
+        <li class="service service--featured">
+          <span class="service__icon"><svg class="icon"><use href="#i-star"/></svg></span>
+          <h3 class="service__title">Service mis en avant</h3>
+          <p><strong>Offre spéciale</strong> : décrivez ici ce que vous voulez faire ressortir.</p>
+        </li>
+        <li class="service">
+          <span class="service__icon"><svg class="icon"><use href="#i-shield"/></svg></span>
+          <h3 class="service__title">Service 6</h3>
+          <p>Décrivez ce service en une ou deux phrases.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS ===== -->
+  <section class="section about" id="a-propos" aria-labelledby="about-title">
+    <div class="container about__grid">
+      <div class="about__text">
+        <p class="section__kicker">À propos</p>
+        <h2 class="section__title" id="about-title">Votre entreprise en quelques mots</h2>
+        <p>
+          Racontez l'histoire de <strong>Nom de l'entreprise</strong> : depuis quand vous
+          existez, votre savoir-faire, votre équipe, ce qui vous rend fiables.
+        </p>
+        <p>
+          Ajoutez un deuxième paragraphe sur vos engagements : délais, garanties,
+          conseils, proximité avec vos clients à <strong>Votre-Ville</strong>.
+        </p>
+      </div>
+
+      <ul class="highlights">
+        <li class="highlight">
+          <span class="highlight__icon"><svg class="icon"><use href="#i-badge"/></svg></span>
+          <span>Point fort 1</span>
+        </li>
+        <li class="highlight">
+          <span class="highlight__icon"><svg class="icon"><use href="#i-shield"/></svg></span>
+          <span>Point fort 2</span>
+        </li>
+        <li class="highlight">
+          <span class="highlight__icon"><svg class="icon"><use href="#i-user"/></svg></span>
+          <span>Point fort 3</span>
+        </li>
+        <li class="highlight highlight--logo">
+          <span class="highlight__icon logo-chip"><img src="images/label.svg" width="324" height="155" alt="Logo du label ou du partenaire" loading="lazy"></span>
+          <span>Votre label ou réseau</span>
+        </li>
+      </ul>
+
+      <figure class="about__media">
+        <img src="images/a-propos.svg" width="1280" height="720" loading="lazy" alt="Décrivez la photo">
+        <figcaption>Légende de la photo</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== GALERIE ===== -->
+  <section class="section gallery" id="galerie" aria-labelledby="gallery-title">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__kicker">En images</p>
+        <h2 class="section__title" id="gallery-title">Nos réalisations</h2>
+        <p class="section__intro">
+          Montrez vos locaux, votre équipe et vos réalisations. Chaque photo s'agrandit au clic.
+        </p>
+      </header>
+
+      <div class="gallery__grid">
+        <figure class="gallery__item">
+          <a href="images/galerie-1.svg" class="gallery__link"><img src="images/galerie-1.svg" width="1280" height="960" loading="lazy" alt="Décrivez la photo"></a>
+          <figcaption>Légende 1</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <a href="images/galerie-2.svg" class="gallery__link"><img src="images/galerie-2.svg" width="960" height="1280" loading="lazy" alt="Décrivez la photo"></a>
+          <figcaption>Légende 2</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <a href="images/galerie-3.svg" class="gallery__link"><img src="images/galerie-3.svg" width="1280" height="720" loading="lazy" alt="Décrivez la photo"></a>
+          <figcaption>Légende 3</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <a href="images/galerie-4.svg" class="gallery__link"><img src="images/galerie-4.svg" width="1280" height="960" loading="lazy" alt="Décrivez la photo"></a>
+          <figcaption>Légende 4</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <a href="images/galerie-5.svg" class="gallery__link"><img src="images/galerie-5.svg" width="720" height="1280" loading="lazy" alt="Décrivez la photo"></a>
+          <figcaption>Légende 5</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <a href="images/galerie-6.svg" class="gallery__link"><img src="images/galerie-6.svg" width="1280" height="960" loading="lazy" alt="Décrivez la photo"></a>
+          <figcaption>Légende 6</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ZONES D'INTERVENTION (SEO LOCAL) ===== -->
+  <section class="section zones" id="zones" aria-labelledby="zones-title">
+    <div class="container">
+      <header class="section__header zones__header">
+        <p class="section__kicker">Zones d'intervention</p>
+        <h2 class="section__title" id="zones-title">
+          Nous intervenons dans <strong class="zones__all">toute la région</strong>
+        </h2>
+        <p class="section__intro">
+          Listez les villes ou départements où vous intervenez : c'est important pour
+          apparaître dans les recherches Google locales.
+        </p>
+      </header>
+
+      <ul class="zones__list">
+        <li class="zones__dept zones__dept--home">
+          <span class="zones__num">00</span>
+          <span class="zones__name">Votre-Ville</span>
+          <span class="zones__tag">Notre entreprise</span>
+          <span class="zones__cities">Communes voisines, séparées par des virgules</span>
+        </li>
+        <li class="zones__dept">
+          <span class="zones__num">00</span>
+          <span class="zones__name">Zone 2</span>
+          <span class="zones__cities">Ville, ville, ville</span>
+        </li>
+        <li class="zones__dept">
+          <span class="zones__num">00</span>
+          <span class="zones__name">Zone 3</span>
+          <span class="zones__cities">Ville, ville, ville</span>
+        </li>
+        <li class="zones__dept">
+          <span class="zones__num">00</span>
+          <span class="zones__name">Zone 4</span>
+          <span class="zones__cities">Ville, ville, ville</span>
+        </li>
+        <li class="zones__dept zones__dept--alt">
+          <span class="zones__num">+</span>
+          <span class="zones__name">Et alentours</span>
+          <span class="zones__cities">Contactez-nous pour toute autre zone</span>
+          <a class="zones__wa" href="https://wa.me/33612345678" target="_blank" rel="noopener">
+            <svg class="icon"><use href="#i-whatsapp"/></svg> WhatsApp
+          </a>
+        </li>
+      </ul>
+
+      <ul class="zones__extra">
+        <li>
+          <span class="zones__extra-icon"><svg class="icon"><use href="#i-truck"/></svg></span>
+          <span><span class="zones__extra-label">Déplacement</span>
+          Dans <strong class="zones__all zones__all--sm">toute la région</strong></span>
+        </li>
+        <li>
+          <span class="zones__extra-icon"><svg class="icon"><use href="#i-clock"/></svg></span>
+          <span><span class="zones__extra-label">Délais</span>
+          Intervention <strong class="zones__all zones__all--sm">rapide</strong></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact__cta">
+        <p class="section__kicker">Contact</p>
+        <h2 class="section__title" id="contact-title">Une question, un devis, un rendez-vous ?</h2>
+        <p class="section__intro">
+          Appelez-nous directement, ou écrivez-nous via le formulaire ci-dessous :
+          nous vous répondons rapidement.
+        </p>
+        <div class="contact__phones">
+          <a href="tel:+33123456789" class="contact__phone">
+            <span class="contact__phone-label">Téléphone</span> 01 23 45 67 89
+          </a>
+          <a href="tel:+33612345678" class="contact__phone">
+            <span class="contact__phone-label">Urgences</span> 06 12 34 56 78
+          </a>
+        </div>
+        <a class="whatsapp-btn" href="https://wa.me/33612345678" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-whatsapp"/></svg>
+          <span>
+            <span class="whatsapp-btn__label">Réponse rapide</span>
+            Écrivez-nous sur WhatsApp
+          </span>
+        </a>
+      </div>
+
+      <div class="contact__grid">
+      <!-- Formulaire : créer une clé gratuite sur web3forms.com avec l'email du client -->
+      <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" data-phone="01 23 45 67 89">
+        <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS">
+        <input type="hidden" name="subject" value="Nouvelle demande depuis le site">
+        <input type="hidden" name="from_name" value="Site Nom de l'entreprise">
+        <input type="checkbox" name="botcheck" class="contact-form__trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <h3 class="contact-form__title">Demande de devis ou de rendez-vous</h3>
+        <p class="contact-form__urgent">
+          <svg class="icon"><use href="#i-phone"/></svg>
+          <span>Urgent ? Appelez directement le
+          <a href="tel:+33612345678">06 12 34 56 78</a>.</span>
+        </p>
+
+        <div class="contact-form__row">
+          <div class="contact-form__field">
+            <label for="cf-name">Nom *</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-phone">Téléphone *</label>
+            <input id="cf-phone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
+        </div>
+        <div class="contact-form__row">
+          <div class="contact-form__field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-type">Type de demande *</label>
+            <select id="cf-type" name="type_de_demande" required>
+              <option value="">Choisir…</option>
+              <option>Demande de devis</option>
+              <option>Prise de rendez-vous</option>
+              <option>Question</option>
+              <option>Autre demande</option>
+            </select>
+          </div>
+        </div>
+        <div class="contact-form__field">
+          <label for="cf-message">Votre message *</label>
+          <textarea id="cf-message" name="message" rows="5" required></textarea>
+        </div>
+        <label class="contact-form__consent">
+          <input type="checkbox" name="consentement" value="Oui" required>
+          <span>J'accepte que mes informations soient utilisées par Nom de l'entreprise uniquement pour répondre à ma demande. *</span>
+        </label>
+        <button type="submit" class="btn btn--primary btn--lg contact-form__submit">
+          <svg class="icon"><use href="#i-mail"/></svg> Envoyer ma demande
+        </button>
+        <p class="contact-form__status" role="status" aria-live="polite"></p>
+      </form>
+
+      <address class="contact__infos">
+        <a class="contact__info" href="mailto:contact@exemple.fr">
+          <span class="contact__icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+          <span><span class="contact__label">Email</span> contact@exemple.fr</span>
+        </a>
+        <a class="contact__info" href="https://www.google.com/maps/dir/?api=1&amp;destination=1+rue+de+l%27Exemple+00000+Votre-Ville" target="_blank" rel="noopener">
+          <span class="contact__icon"><svg class="icon"><use href="#i-pin"/></svg></span>
+          <span><span class="contact__label">Adresse · itinéraire</span> 1 rue de l'Exemple, 00000 Votre-Ville</span>
+        </a>
+        <div class="contact__info">
+          <span class="contact__icon"><svg class="icon"><use href="#i-clock"/></svg></span>
+          <span><span class="contact__label">Horaires</span> Lun-Ven : 8h-12h / 14h-18h</span>
+        </div>
+        <div class="contact__info">
+          <span class="contact__icon"><svg class="icon"><use href="#i-user"/></svg></span>
+          <span><span class="contact__label">Responsable</span> Prénom Nom</span>
+        </div>
+      </address>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== PIED DE PAGE ===== -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand brand">
+      <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-badge"/></svg></span>
+      <span class="brand__text">
+        <span class="brand__name">Nom de <span class="brand__auto">l'entreprise</span></span>
+        <span class="brand__tagline">Votre métier &middot; Votre-Ville</span>
+      </span>
+    </div>
+    <div class="site-footer__badges">
+      <span class="logo-chip"><img src="images/label.svg" width="324" height="155" alt="Logo du label ou du partenaire" loading="lazy"></span>
+    </div>
+    <p class="site-footer__contact">
+      Téléphone : <a href="tel:+33123456789">01 23 45 67 89</a> —
+      <a href="mailto:contact@exemple.fr">contact@exemple.fr</a> —
+      <a href="https://wa.me/33612345678" target="_blank" rel="noopener">WhatsApp</a>
+    </p>
+    <p class="site-footer__legal">
+      Nom de l'entreprise — Responsable : Prénom Nom —
+      1 rue de l'Exemple, 00000 Votre-Ville — SIRET : 000 000 000 00000.
+    </p>
+    <p class="site-footer__copy">&copy; <span id="year">2026</span> Nom de l'entreprise. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Visionneuse de la galerie -->
+<dialog class="lightbox" aria-label="Photo agrandie">
+  <figure class="lightbox__figure">
+    <div>
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </div>
+  </figure>
+  <button type="button" class="lightbox__btn lightbox__close" aria-label="Fermer"><svg class="icon"><use href="#i-close"/></svg></button>
+  <button type="button" class="lightbox__btn lightbox__prev" aria-label="Photo précédente"><svg class="icon"><use href="#i-arrow"/></svg></button>
+  <button type="button" class="lightbox__btn lightbox__next" aria-label="Photo suivante"><svg class="icon"><use href="#i-arrow"/></svg></button>
+</dialog>
+
+<!-- Barre d'appel fixe sur mobile -->
+<div class="callbar">
+  <a href="tel:+33612345678" class="callbar__main"><svg class="icon"><use href="#i-phone"/></svg> Urgences</a>
+  <a href="tel:+33123456789" class="callbar__alt"><svg class="icon"><use href="#i-phone"/></svg> Appeler</a>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

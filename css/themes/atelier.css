@@ -1,0 +1,194 @@
+/* =========================================================
+   THÈME « ATELIER » — industriel & brut :
+   fond sombre, orange chantier, typographie condensée
+   en capitales, angles vifs, bandes de signalisation,
+   services numérotés.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-head: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Barlow', system-ui, sans-serif;
+  --head-weight: 800;
+  --head-transform: uppercase;
+  --head-spacing: 0.005em;
+  --head-line: 1.0;
+  --kicker-spacing: 0.22em;
+
+  --c-bg: #121212;
+  --c-surface: #1b1b1b;
+  --c-alt: #171717;
+  --c-text: #cfd3da;
+  --c-muted: #98a0ab;
+  --c-head: #f2f4f7;
+  --c-border: #2c2c2c;
+  --c-accent: #f26a1b;
+  --c-accent-hover: #ff8a47;
+  --c-accent-ink: #ffffff;
+  --c-kicker: #ffffff;
+
+  --c-topbar-bg: #f26a1b;
+  --c-topbar-text: #ffffff;
+  --c-header-bg: #0b0b0b;
+  --c-header-text: #f2f4f7;
+  --c-footer-bg: #0b0b0b;
+  --c-footer-text: #8d949e;
+
+  --radius: 0;
+  --radius-img: 0;
+  --radius-btn: 0;
+  --shadow-hover: 0 18px 40px rgba(0, 0, 0, .5);
+
+  --stripes: repeating-linear-gradient(-45deg, var(--c-accent) 0 18px, #121212 18px 36px);
+}
+
+body { font-size: 1.05rem; }
+strong { color: var(--c-head); }
+
+.btn { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.08em; font-size: 1.05rem; font-weight: 700; }
+.btn--lg { font-size: 1.2rem; }
+.btn--secondary { color: var(--c-head); border-color: #4a4a4a; }
+.btn--secondary:hover { background: transparent; color: var(--c-accent-hover); border-color: var(--c-accent); }
+
+.topbar { font-weight: 600; }
+.topbar a { text-decoration: none; }
+.site-header { border-bottom: 1px solid #262626; }
+.brand__mark { border-radius: 0; }
+.brand__name { font-size: 1.6rem; letter-spacing: 0.04em; }
+.site-nav__list a { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.1em; font-size: 1.05rem !important; }
+.site-nav__list a:hover { color: var(--c-accent-hover); }
+.site-nav__cta { font-size: 1.15rem; }
+
+/* Hero */
+.hero { background: radial-gradient(circle at 85% 20%, rgba(242, 106, 27, .14), transparent 45%), #121212; }
+.hero__title { font-size: clamp(2.8rem, 6.4vw, 5.4rem); }
+.hero__title-brand { font-size: 0.32em; letter-spacing: 0.24em; }
+.hero__kicker { border-left: 4px solid var(--c-accent); padding-left: 12px; color: var(--c-head); }
+.hero__kicker .icon { color: var(--c-accent); }
+.hero__media { isolation: isolate; margin: 0 18px 18px 0; }
+.hero__media::before { content: ''; position: absolute; inset: 18px -18px -18px 18px; z-index: -1; background: var(--stripes); }
+.hero__media img { aspect-ratio: 16 / 10; }
+.hero__badge { left: -10px; bottom: 28px; font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.08em; font-size: 1.1rem; }
+.hero__facts { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--c-head); }
+
+/* Sections */
+.section { border-top: 1px solid #222; }
+.section__kicker { display: inline-block; background: var(--c-accent); color: var(--c-accent-ink); padding: 4px 10px; }
+.section__title { font-size: clamp(2.2rem, 4.4vw, 3.6rem); }
+
+/* Prestations : panneau de cartes + bandeau */
+.featured { background: #0e0e0e; position: relative; }
+.featured::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 14px; background: var(--stripes); }
+.featured__grid { gap: 1px; background: #2c2c2c; border: 1px solid #2c2c2c; }
+.featured__card { border: 0; padding: 0 30px 36px; background: #121212; }
+.featured__card:hover { transform: none; box-shadow: none; background: #1f1712; }
+.featured__card:first-child { background: var(--c-accent); }
+.featured__card:first-child p { color: #ffe6d6; }
+.featured__card:first-child .featured__icon { background: #fff; color: var(--c-accent); }
+.featured__img { width: calc(100% + 60px); margin: 0 -30px; }
+.featured__icon { width: 68px; height: 68px; margin-top: -34px; margin-bottom: 24px; font-size: 2.1rem; box-shadow: none; }
+.featured__icon .icon { stroke-width: 1.8; }
+.featured__title { font-size: 1.9rem; }
+.featured__band { border: 2px solid var(--c-accent); background: rgba(242, 106, 27, .06); }
+.featured__labels li { font: 700 1.3rem/1.2 var(--font-head); text-transform: uppercase; letter-spacing: 0.05em; }
+.featured__labels .icon { font-size: 1.4rem; }
+.featured__call { padding: 16px 26px; }
+.featured__call-number { font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: 0.04em; }
+
+/* À propos */
+.about__media { border-bottom: 5px solid var(--c-accent); }
+.about__media figcaption { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.1rem; }
+.highlight { background: transparent; border-color: #333; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.92rem; }
+.highlight__icon { background: var(--c-accent); color: var(--c-accent-ink); border-radius: 0; }
+
+/* Savoir-faire : panneau numéroté */
+.services { background: var(--c-bg); }
+.services__grid { gap: 1px; background: #2c2c2c; border: 1px solid #2c2c2c; }
+.service { border: 0; padding: 40px 32px; background: var(--c-bg); }
+.service:hover { transform: none; background: #1a1a1a; box-shadow: inset 0 -4px 0 var(--c-accent); }
+.service::before {
+  content: counter(svc, decimal-leading-zero);
+  position: absolute; top: 26px; right: 28px;
+  font: 800 3.2rem/1 var(--font-head); color: #2b2b2b; transition: color .25s;
+}
+.service:hover::before { color: var(--c-accent); }
+.service__icon { background: transparent; color: var(--c-accent); border: 2px solid var(--c-accent); border-radius: 0; }
+.service__title { font-size: 1.6rem; }
+.service--featured { background: var(--c-accent); }
+.service--featured:hover { background: var(--c-accent-hover); box-shadow: none; }
+.service--featured .service__title, .service--featured p, .service--featured strong { color: #fff; }
+.service--featured .service__icon { color: #fff; border-color: #fff; }
+.service--featured::before, .service--featured:hover::before { color: rgba(255, 255, 255, .25); }
+
+/* Galerie */
+.gallery__item figcaption {
+  left: 14px; right: auto; bottom: 14px; padding: 6px 12px;
+  background: var(--c-accent); color: #fff;
+  font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.08em;
+}
+@media (max-width: 639px) { .gallery__item figcaption { display: none; } }
+
+/* Zones */
+.zones__header { max-width: 980px; }
+.zones__all {
+  display: inline-block; margin: 0 0.08em; padding: 0.02em 0.2em 0;
+  font-size: 1.3em; line-height: 0.95; color: #fff !important;
+  background: var(--c-accent); transform: skewX(-8deg);
+  box-shadow: 0.12em 0.12em 0 #0b0b0b, 0.12em 0.12em 0 2px var(--c-accent);
+}
+.zones__all--sm { font-size: 1em; margin-left: 0.15em; box-shadow: 0.1em 0.1em 0 #0b0b0b; }
+.zones__list { gap: 1px; background: #2c2c2c; border: 1px solid #2c2c2c; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 1000px) { .zones__list { grid-template-columns: repeat(5, 1fr); } }
+.zones__dept { border: 0; padding: 28px 22px 26px; background: var(--c-bg); transition: background-color .25s; }
+.zones__dept:hover { background: #1f1712; }
+.zones__num { font-size: clamp(3.2rem, 6vw, 4.6rem); }
+.zones__name { font-size: clamp(1.3rem, 2.2vw, 1.8rem); text-transform: uppercase; overflow-wrap: anywhere; }
+.zones__dept--home { background: var(--c-accent); }
+.zones__dept--home:hover { background: var(--c-accent-hover); }
+.zones__dept--home .zones__num { color: #fff; }
+.zones__dept--home .zones__tag, .zones__dept--home .zones__cities { color: #ffe6d6; }
+.zones__dept--alt .zones__num { color: var(--c-accent-hover); }
+@media (max-width: 999px) { .zones__dept--alt { grid-column: 1 / -1; } }
+.zones__wa { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.05rem; }
+.zones__extra li {
+  border: 2px solid var(--c-accent); background: rgba(242, 106, 27, .06);
+  font: 800 clamp(1.5rem, 3vw, 2.1rem)/1.15 var(--font-head); text-transform: uppercase;
+}
+
+/* Contact : bandeau orange */
+.contact {
+  --c-head: #ffffff; --c-muted: #ffe6d6; --c-surface: rgba(0, 0, 0, .14); --c-border: rgba(255, 255, 255, .25);
+  background: var(--c-accent); color: #fff; position: relative;
+}
+.contact::before, .contact::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 14px;
+  background: repeating-linear-gradient(-45deg, #121212 0 16px, var(--c-accent) 16px 32px);
+}
+.contact::before { top: 0; }
+.contact::after { bottom: 0; }
+.contact .section__kicker { background: #121212; color: #fff; }
+.contact__phone { background: #121212; padding: 14px 24px; font-size: clamp(2.1rem, 5vw, 3.2rem); transition: background-color .2s; }
+.contact__phone:hover { background: #000; }
+.contact__phone-label { color: #ffb88e; }
+.contact__icon { background: #121212; color: #fff; }
+.contact__label { color: #ffe0cc; }
+.contact__info { color: #fff; text-decoration: none; }
+.contact .contact__infos { grid-template-columns: 1fr; }
+
+.contact-form {
+  --c-form-bg: #121212; --c-form-text: #cfd3da; --c-input-bg: #1b1b1b; --c-input-border: #333;
+  border-top: 5px solid #fff; box-shadow: 0 30px 60px rgba(0, 0, 0, .35);
+}
+.contact-form__title { color: #fff; font-size: 2rem; }
+.contact-form__field label { font-family: var(--font-head); font-size: 1rem; color: #fff; }
+.contact-form__urgent { background: rgba(242, 106, 27, .14); color: #fff; }
+.contact-form__urgent .icon, .contact-form__urgent a { color: var(--c-accent-hover); }
+.contact-form select option { background: #1b1b1b; }
+.contact-form__status.is-success { background: rgba(46, 204, 113, .14); border-left: 4px solid #2ecc71; color: #c9f5da; }
+.contact-form__status.is-error { background: rgba(255, 82, 82, .14); border-left: 4px solid #ff5252; color: #ffd4d4; }
+
+.whatsapp-btn { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.06em; font-size: 1.25rem; }
+.whatsapp-btn__label { font-family: var(--font-body); }
+
+.callbar { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.05em; font-size: 1.1rem; }
+.site-footer { border-top: 1px solid #222; }

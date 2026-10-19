@@ -1,0 +1,124 @@
+/* =========================================================
+   THÈME « AZUR » — frais et lumineux :
+   blanc, bleu profond et turquoise, formes très arrondies,
+   motif de carreaux en arrière-plan. Esprit salle de bain,
+   piscine, propreté.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-head: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --head-weight: 800;
+  --head-spacing: -0.03em;
+  --kicker-transform: none;
+  --kicker-spacing: 0;
+
+  --c-bg: #ffffff;
+  --c-surface: #ffffff;
+  --c-alt: #f1f7fb;
+  --c-text: #33465a;
+  --c-muted: #5d7186;
+  --c-head: #0b2540;
+  --c-border: #dfeaf3;
+  --c-accent: #0d63b8;
+  --c-accent-hover: #0a4f94;
+  --c-accent-ink: #ffffff;
+  --c-kicker: #0d63b8;
+  --aqua: #17b3c4;
+
+  --c-topbar-bg: #0b2540;
+  --c-topbar-text: #cfe3f4;
+  --c-header-bg: rgba(255, 255, 255, .92);
+  --c-header-text: #0b2540;
+  --c-footer-bg: #0b2540;
+  --c-footer-text: #9db6cc;
+
+  --radius: 22px;
+  --radius-img: 28px;
+  --radius-btn: 999px;
+  --shadow: 0 10px 30px rgba(13, 99, 184, .08);
+  --shadow-hover: 0 22px 50px rgba(13, 99, 184, .18);
+
+  --tiles: linear-gradient(rgba(13, 99, 184, .06) 1.5px, transparent 1.5px) 0 0 / 56px 56px,
+           linear-gradient(90deg, rgba(13, 99, 184, .06) 1.5px, transparent 1.5px) 0 0 / 56px 56px;
+}
+
+.site-header { backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid var(--c-border); }
+.brand__mark { border-radius: 12px; background: linear-gradient(135deg, var(--c-accent), var(--aqua)); }
+.brand__name { text-transform: none; letter-spacing: -0.02em; }
+.brand__auto { color: var(--aqua); }
+.site-nav__list a:hover { background: var(--c-alt); }
+.btn--primary { background: linear-gradient(135deg, var(--c-accent), #1489c9); box-shadow: 0 10px 24px rgba(13, 99, 184, .28); }
+.btn--primary:hover { background: var(--c-accent-hover); }
+.btn--secondary { border-color: var(--c-border); background: #fff; border-width: 1.5px; }
+.btn--secondary:hover { background: var(--c-alt); color: var(--c-accent); border-color: var(--c-accent); }
+
+/* Hero sur fond de carreaux */
+.hero { background: radial-gradient(circle at 90% 10%, #d9f3f7 0, transparent 40%), var(--tiles), #fbfdff; }
+.hero__kicker { background: #fff; border: 1px solid var(--c-border); border-radius: 999px; padding: 6px 16px 6px 10px; box-shadow: var(--shadow); font-size: 0.9rem; }
+.hero__kicker .icon { color: var(--aqua); }
+.hero__title { font-size: clamp(2.5rem, 5.6vw, 4.4rem); }
+.hero__title-main { background: linear-gradient(135deg, var(--c-head) 40%, var(--c-accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero__title-brand { color: var(--aqua); letter-spacing: 0.06em; }
+.hero__facts .icon { color: var(--aqua); }
+.hero__media img { border: 8px solid #fff; }
+.hero__badge { border-radius: 999px; background: #fff; color: var(--c-head); box-shadow: var(--shadow-hover); }
+.hero__badge .icon { color: var(--aqua); }
+
+.section__kicker { display: inline-block; padding: 6px 14px; border-radius: 999px; background: #e3f1fb; font-size: 0.85rem; }
+.section__title { font-size: clamp(2rem, 3.8vw, 3rem); }
+
+/* Prestations */
+.featured { background: var(--c-alt); }
+.featured__card { border: 0; box-shadow: var(--shadow); }
+.featured__img { border-radius: var(--radius) var(--radius) 0 0; }
+.featured__icon { border-radius: 18px; background: linear-gradient(135deg, var(--c-accent), var(--aqua)); }
+.featured__band { background: linear-gradient(135deg, var(--c-accent), #1489c9); border: 0; }
+.featured__labels li { color: #fff; }
+.featured__labels .icon { color: #9fe8f0; }
+.featured__call { background: #fff; color: var(--c-head); border-radius: 999px; padding: 14px 32px; text-align: center; }
+.featured__call:hover { background: #e3f1fb; }
+.featured__call-label { color: var(--c-accent); }
+
+/* Savoir-faire */
+.services { background: var(--c-bg); }
+.service { border: 1px solid var(--c-border); box-shadow: var(--shadow); }
+.service__icon { border-radius: 16px; background: #e3f1fb; color: var(--c-accent); }
+.service:nth-child(odd) .service__icon { background: #dcf5f8; color: #0f8d9b; }
+.service--featured { background: linear-gradient(135deg, var(--c-accent), var(--aqua)); border: 0; }
+.service--featured .service__title, .service--featured p, .service--featured strong { color: #fff; }
+.service--featured .service__icon { background: rgba(255, 255, 255, .2); color: #fff; }
+
+/* À propos */
+.highlight { box-shadow: var(--shadow); }
+.highlight__icon { border-radius: 14px; }
+
+/* Galerie */
+.gallery__item figcaption { font-weight: 700; }
+
+/* Zones */
+.zones { background: var(--tiles), var(--c-alt); }
+.zones__all { background: linear-gradient(135deg, var(--c-accent), var(--aqua)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.zones__dept { border: 0; box-shadow: var(--shadow); }
+.zones__dept--home { background: linear-gradient(135deg, var(--c-accent), var(--aqua)); }
+.zones__dept--home .zones__num, .zones__dept--home .zones__name { color: #fff; }
+.zones__dept--home .zones__tag, .zones__dept--home .zones__cities { color: #e0f4fb; }
+.zones__extra li { border: 0; box-shadow: var(--shadow); }
+.zones__extra-icon { border-radius: 18px; background: linear-gradient(135deg, var(--c-accent), var(--aqua)); }
+
+/* Contact : grand bloc bleu nuit arrondi */
+.contact { padding-inline: 12px; }
+.contact > .container {
+  --c-head: #ffffff; --c-muted: #b8cee2; --c-surface: rgba(255, 255, 255, .07); --c-border: rgba(255, 255, 255, .14);
+  background: radial-gradient(circle at 100% 0%, rgba(23, 179, 196, .35), transparent 45%), #0b2540;
+  color: #fff; border-radius: 36px; padding-block: clamp(36px, 6vw, 64px);
+}
+.contact .section__kicker { background: rgba(255, 255, 255, .12); color: #9fe8f0; }
+.contact__phone-label { color: #9fe8f0; }
+.contact__icon { background: rgba(23, 179, 196, .2); color: #9fe8f0; }
+.contact-form { box-shadow: 0 30px 60px rgba(0, 0, 0, .3); }
+.contact-form__status.is-error { background: #fdecea; color: #8a1c12; }
+.contact-form__status.is-success { background: #e6f7ee; color: #14532d; }
+
+.callbar__alt { background: var(--aqua); color: #fff; }
