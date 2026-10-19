@@ -29,6 +29,7 @@
 
   var current = find(params.get('style'));
   if (current < 0 && !embed) current = find(stored());
+  if (current < 0) current = find(document.documentElement.getAttribute('data-theme'));
   if (current < 0) current = 0;
 
   function apply(index, updateUrl) {

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="mineral">
+<html lang="fr" data-theme="terracotta">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- À PERSONNALISER : titre (≈ 60 caractères) et description (≈ 155 caractères) pour Google -->
-<title>Votre métier à Votre-Ville | Nom de l'entreprise</title>
+<title>Couturière à Votre-Ville | Retouches et réparations de vêtements</title>
 <meta name="description" content="Nom de l'entreprise, Votre-Ville : décrivez en une phrase votre métier, vos prestations principales et votre zone d'intervention.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Nom de l'entreprise">
@@ -28,7 +28,8 @@
 
 <link rel="stylesheet" href="css/base.css">
 <!-- Thème graphique (polices incluses) : en production, garder UNE seule ligne avec le thème choisi -->
-<link rel="stylesheet" href="css/themes/mineral.css" id="theme-css">
+<link rel="stylesheet" href="css/themes/terracotta.css" id="theme-css">
+<link rel="stylesheet" href="css/mannequin.css">
 
 <!-- ===== DÉMO : sélection du style (à supprimer en production) ===== -->
 <script src="js/style-switcher.js"></script>
@@ -143,8 +144,8 @@
            attention, l'en-tête est clair ou sombre selon le thème. -->
       <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-badge"/></svg></span>
       <span class="brand__text">
-        <span class="brand__name">Nom de <span class="brand__auto">l'entreprise</span></span>
-        <span class="brand__tagline">Votre métier &middot; Votre-Ville</span>
+        <span class="brand__name">Atelier <span class="brand__auto">de couture</span></span>
+        <span class="brand__tagline">Retouches &amp; réparations &middot; Votre-Ville</span>
       </span>
     </a>
 
@@ -156,6 +157,7 @@
 
     <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
       <ul class="site-nav__list">
+        <li><a href="#reparation">Demande de réparation</a></li>
         <li><a href="#prestations">Prestations</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#a-propos">À propos</a></li>
@@ -180,20 +182,19 @@
           <svg class="icon"><use href="#i-pin"/></svg> Votre-Ville &middot; Votre région
         </p>
         <h1 class="hero__title">
-          <span class="hero__title-main">Votre métier à Votre-Ville</span>
-          <span class="hero__title-brand">Nom de l'entreprise</span>
+          <span class="hero__title-main">Vos vêtements <em>réparés</em> avec soin</span>
+          <span class="hero__title-brand">Couturière à Votre-Ville</span>
         </h1>
         <p class="hero__lead">
-          Présentez ici votre entreprise en deux ou trois phrases : ce que vous faites,
-          pour qui, et ce qui vous distingue. Citez votre ville et vos prestations
-          principales, c'est ce que Google lira en premier.
+          Ourlets, fermetures éclair, trous, boutons, cintrage : montrez-nous ce qu'il faut
+          réparer directement sur le mannequin, votre demande est prête en quelques secondes.
         </p>
         <div class="hero__actions">
           <a href="tel:+33123456789" class="btn btn--primary btn--lg">
             <svg class="icon"><use href="#i-phone"/></svg> Appeler : 01 23 45 67 89
           </a>
-          <a href="#contact" class="btn btn--secondary btn--lg">
-            <svg class="icon"><use href="#i-file"/></svg> Demander un devis
+          <a href="#reparation" class="btn btn--secondary btn--lg">
+            <svg class="icon"><use href="#i-file"/></svg> Demander une réparation
           </a>
         </div>
         <ul class="hero__facts">
@@ -209,6 +210,33 @@
           <svg class="icon"><use href="#i-badge"/></svg> Votre point fort
         </figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- ===== DEMANDE DE RÉPARATION : MANNEQUIN CLIQUABLE (css/mannequin.css, js/mannequin.js) ===== -->
+  <section class="section repair" id="reparation" aria-labelledby="repair-title">
+    <div class="container">
+      <header class="section__header">
+        <p class="section__kicker">Demande de réparation</p>
+        <h2 class="section__title" id="repair-title">Montrez-nous ce qu'il faut réparer</h2>
+        <p class="section__intro">
+          Touchez le vêtement sur le mannequin, cochez les réparations, c'est tout :
+          tout se fait sur cet écran, et vous pouvez ajouter plusieurs vêtements.
+        </p>
+      </header>
+
+      <div class="repair__app" id="mannequin">
+        <div class="repair__stage">
+          <svg class="mq" viewBox="-70 30 440 572" role="group" aria-label="Mannequin : choisissez une partie du corps"></svg>
+        </div>
+        <div class="repair__panel">
+          <nav class="repair__crumbs" aria-label="Votre sélection"></nav>
+          <div class="repair__step" aria-live="polite"></div>
+          <div class="repair__basket" hidden></div>
+        </div>
+        <p class="repair__toast" role="status" aria-live="polite"></p>
+      </div>
+      <noscript><p>Pour décrire votre réparation, écrivez-nous via le formulaire de contact ci-dessous.</p></noscript>
     </div>
   </section>
 
@@ -515,6 +543,7 @@
             <label for="cf-type">Type de demande *</label>
             <select id="cf-type" name="type_de_demande" required>
               <option value="">Choisir…</option>
+              <option>Demande de réparation</option>
               <option>Demande de devis</option>
               <option>Prise de rendez-vous</option>
               <option>Question</option>
@@ -606,5 +635,6 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/mannequin.js" defer></script>
 </body>
 </html>
